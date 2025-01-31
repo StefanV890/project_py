@@ -5,7 +5,7 @@ def start_game():
     secret_number =  random.randint(1,100)
     tries = 0
     print("chose a number between 1-100")
-    print (secret_number)
+   # print (secret_number) ###debug
     while True:
         tries +=1
         key_number =int(input("type a number "))
