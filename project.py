@@ -45,9 +45,3 @@ print("RESULTS")
 for player in punctaj.keys():
     print(player,"  -  ",punctaj[player]," attemps in ",timp[player]," sec.")
 
-
-"""
-cati playeri sunt (player1:nume player2:nume) start player, start player2...
-mantin playeri si 
-
-"""
