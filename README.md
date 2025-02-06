@@ -8,10 +8,12 @@ This is a simple number guessing game written in Python. The game randomly selec
 
 1. Run the script in a Python environment.
 2. The game will generate a random number between 1 and 100.
-3. The player inputs a guess.
+3. The players input a guess.
 4. The game provides feedback:
+   - "Player name to introduce"
+   - "Multiple players at same time"
    - "Type a smaller number next time" if the guess is too high.
-   - "Type a bigger number next time" if the guess is too low.
+   - "Type a bigger number next time" if the guess is too low. 
 5. The game continues until the player guesses the correct number.
 6. Once the correct number is guessed, the game displays all previous guesses and congratulates the player.
 
