@@ -30,7 +30,7 @@ python project.py
 ```
 ## Notes
 
-- The game prints the secret number at the start for testing purposes. You can use `print(secret_nibe)` for debugging.
+- The game prints the secret number at the start for testing purposes. You can use `print(secret_number)` for debugging.
 - The game does not handle non-integer inputs. Ensure to input valid numbers.
 
 
