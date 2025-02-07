@@ -16,7 +16,7 @@ def initialize_players(user_number):
         -the index of the player
         -crates the points and time_ dictionary
     """
-    for i in range(user_number):
+    for _ in range(user_number):
         tx = "user name " + str(i+1) + ": "
         play = input(tx)
         points[play] = 0
