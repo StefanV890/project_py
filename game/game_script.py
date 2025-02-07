@@ -15,7 +15,7 @@ def start_game(name):
         -number of attempts
         ------
         Notes
-        -uncomment line 48 for debug
+        -uncomment line 26 for debug
         """
     t1 = int(time.time())
     print("Start game for ",name)
