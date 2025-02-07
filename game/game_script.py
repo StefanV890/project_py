@@ -1,28 +1,6 @@
+from .players import initialize_players, time_, points
 import random
 import time
-
-points = {}
-time_ = {}
-
-
-def initalize_players(user_number):
-    """
-        Function for registering players
-        ------
-        Parameters:
-        user_number(int) the number of the users
-        ------
-        Returns
-        -initial player names
-        -the index of the player
-        -crates the points and time_ dictionary
-    """
-    for i in range(user_number):
-        tx = "user name " + str(i+1) + ": "
-        play = input(tx)
-        points[play] = 0
-        time_[play] = 0
-        return points, time_
 
 def start_game(name):
     """
@@ -62,13 +40,3 @@ def start_game(name):
             points[name]=tries
             time_[name]=t2-t1
             break
-user_number = int(input("how many users "))
-initalize_players(user_number)
-
-for player in points.keys():
-    print("")
-    start_game(player)
-
-print("RESULTS")
-for player in points.keys():
-    print(f"{player} - {points[player]} attemps in {time_[player]} seconds")
