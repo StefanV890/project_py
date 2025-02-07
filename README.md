@@ -26,7 +26,7 @@ This is a simple number guessing game written in Python. The game randomly selec
 To play the game, run the following command in your terminal or command prompt:
 
 ```sh
-python project.py
+python main.py
 ```
 ## Notes
 
