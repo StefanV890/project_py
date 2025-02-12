@@ -15,28 +15,32 @@ def start_game(name):
         -number of attempts
         ------
         Notes
-        -uncomment line 26 for debug
+        -uncomment line 48 for debug
         """
-    t1 = int(time.time())
-    print("Start game for ",name)
-    guesses = []
-    secret_number =  random.randint(1,100)
-    tries = 0
-    print("chose a number between 1-100")
-    #print (secret_number) #debug
-    while True:
-        tries +=1
-        key_number =int(input("type a number "))
-        guesses.append(key_number)
-        if secret_number < key_number:
-            print("type a smaller number next time")
-        elif secret_number > key_number:
-            print("type a bigger number next time")
-        else:
-            t2 = int(time.time())
-            #print(t2-t1)
-            print(f"Your guesses: {guesses}")
-            print(f"Good work {name}. You got it right in {tries} attempts\n")
-            points[name]=tries
-            time_[name]=t2-t1
-            break
+    try:
+        t1 = int(time.time())
+        print("Start game for ",name)
+        guesses = []
+        secret_number =  random.randint(1,100)
+        tries = 0
+        print("chose a number between 1-100")
+        #print (secret_number) #debug
+        while True:
+            tries +=1
+            key_number =int(input("type a number "))
+            guesses.append(key_number)
+            if secret_number < key_number:
+                print("type a smaller number next time")
+            elif secret_number > key_number:
+                print("type a bigger number next time")
+            else:
+                t2 = int(time.time())
+                #print(t2-t1)
+                print(f"Your guesses: {guesses}")
+                print(f"Good work {name}. You got it right in {tries} attempts\n")
+                points[name]=tries
+                time_[name]=t2-t1
+                break
+    except ValueError:
+        print("Type a valid number")
+    start_game(name)
