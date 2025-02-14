@@ -28,6 +28,14 @@ To play the game, run the following command in your terminal or command prompt:
 ```sh
 python main.py
 ```
+##For test run:
+
+(you need to have pytest installed)
+
+```sh
+pytest test_game_script.py
+```
+
 ## Notes
 
 - The game prints the secret number at the start for testing purposes. You can use `print(secret_number)` for debugging.
