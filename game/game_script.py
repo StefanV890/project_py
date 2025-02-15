@@ -2,6 +2,9 @@ from .players import initialize_players, time_, points
 import random
 import time
 
+class BoundariesException(Exception):
+    pass
+
 def start_game(name):
     """
         Function for starting game
@@ -28,6 +31,8 @@ def start_game(name):
         while True:
             tries +=1
             key_number =int(input("type a number "))
+            if key_number < 1 or key_number > 100:
+                raise BoundariesException
             guesses.append(key_number)
             if secret_number < key_number:
                 print("type a smaller number next time")
@@ -41,6 +46,10 @@ def start_game(name):
                 points[name]=tries
                 time_[name]=t2-t1
                 break
+    except BoundariesException:
+        print("Error: the value is not within permitted range (1..100)")
+        start_game(name)
     except ValueError:
         print("Type a valid number")
-    start_game(name)
+        start_game(name)
+
