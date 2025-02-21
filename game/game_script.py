@@ -1,6 +1,8 @@
 from .players import initialize_players, time_, points
+from os import strerror
 import random
 import time
+
 
 class BoundariesException(Exception):
     pass
@@ -27,7 +29,7 @@ def start_game(name):
         secret_number =  random.randint(1,100)
         tries = 0
         print("chose a number between 1-100")
-        #print (secret_number) #debug
+        print (secret_number) #debug
         while True:
             tries +=1
             key_number =int(input("type a number "))
@@ -45,6 +47,9 @@ def start_game(name):
                 print(f"Good work {name}. You got it right in {tries} attempts\n")
                 points[name]=tries
                 time_[name]=t2-t1
+                with open("C:/Users/Stefan/PYTHON/project_py/results", "at") as f:
+                    f.write(f"Good work {name}. You got it right in {tries} attempts\n")
+                    f.write(f"Your guesses: {guesses}\n")
                 break
     except BoundariesException:
         print("Error: the value is not within permitted range (1..100)")
@@ -52,4 +57,6 @@ def start_game(name):
     except ValueError:
         print("Type a valid number")
         start_game(name)
+    except IOError as e:
+        print("I/O error occurred:", strerror(e.errno))
 
