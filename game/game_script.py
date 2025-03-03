@@ -1,7 +1,8 @@
-from .players import initialize_players, time_, points
+from .players import initialize_players, time_, points, Player
 from os import strerror
 import random
 import time
+
 
 
 class BoundariesException(Exception):
@@ -24,7 +25,6 @@ def start_game(name):
         """
     try:
         t1 = int(time.time())
-        print("Start game for ",name)
         guesses = []
         secret_number =  random.randint(1,100)
         tries = 0
@@ -44,9 +44,7 @@ def start_game(name):
                 t2 = int(time.time())
                 #print(t2-t1)
                 print(f"Your guesses: {guesses}")
-                print(f"Good work {name}. You got it right in {tries} attempts\n")
-                points[name]=tries
-                time_[name]=t2-t1
+                print(f"You got it right in {tries} attempts\n")
                 with open("C:/Users/Stefan/PYTHON/project_py/results", "at") as f:
                     f.write(f"Good work {name}. You got it right in {tries} attempts\n")
                     f.write(f"Your guesses: {guesses}\n")
